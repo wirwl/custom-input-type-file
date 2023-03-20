@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Parcel Sandbox
+    meta(charset='UTF-8')
+    link(href=require('./index.css') rel='stylesheet')
+  body
+    main
+      ul.components
+        li.component.first
+          test-file-browser(max-files='3' max-size='1024')
+        li.component
+          test-file-browser(max-files='0' max-size='0') max-files=0 max-size=0
+        li.component
+          test-file-browser
+            | Asdf
+      p Проверка через
+      p document.querySelector(`test-file-browser`).files:
+      button.verify
+        | Кол-во файлов для первого test-file-browser
+      p.count Кол-во:
+      p Изменить лимиты для первого test-file-browser:
+      button.max-files max-files=5
+      button.max-size max-size=41457206
+    script(src=require('./index.js'))
